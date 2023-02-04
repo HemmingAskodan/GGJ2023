@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class DigController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 
     public float digSpeed = 5f;
     public float angleSmoothTime = 0.1f;
-    Rigidbody2D rigidbody2D => GetComponent<Rigidbody2D>();
-    SpriteRenderer spriteRenderer => GetComponent<SpriteRenderer>();
+    new Rigidbody2D rigidbody2D => GetComponent<Rigidbody2D>();
+    public SpriteRenderer characterSpriteRenderer;
     private float movementX, movementY;
     private bool isFlipped = false;
 
@@ -58,7 +58,7 @@ public class DigController : MonoBehaviour
     private void flip()
     {
         //transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-        spriteRenderer.flipY = !spriteRenderer.flipY;
+        characterSpriteRenderer.flipY = !characterSpriteRenderer.flipY;
         isFlipped = !isFlipped;
     }
 }
