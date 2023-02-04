@@ -10,7 +10,9 @@ public class DigController : MonoBehaviour
     public float digSpeed = 5f;
     public float angleSmoothTime = 0.1f;
     Rigidbody2D rigidbody2D => GetComponent<Rigidbody2D>();
+    SpriteRenderer spriteRenderer => GetComponent<SpriteRenderer>();
     private float movementX, movementY;
+    private bool isFlipped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,16 @@ public class DigController : MonoBehaviour
 
     float zVelocity;
     // Update is called once per frame
+    void Update(){
+        if ((transform.eulerAngles.z < 90 || transform.eulerAngles.z > 270) && isFlipped)
+        {
+            flip();
+        }
+        if (transform.eulerAngles.z > 90 && transform.eulerAngles.z < 270 && !isFlipped)
+        {
+            flip();
+        }
+    }
     void FixedUpdate()
     {   
         Vector2 axisInputs = new Vector2(movementX,movementY);
@@ -42,5 +54,11 @@ public class DigController : MonoBehaviour
 
         movementX = movementVector.x;
         movementY = movementVector.y;
+    }
+    private void flip()
+    {
+        //transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        spriteRenderer.flipY = !spriteRenderer.flipY;
+        isFlipped = !isFlipped;
     }
 }
