@@ -29,7 +29,8 @@ public class MineTriggered : MonoBehaviour
             }
 
             // Play explotion
-            gameObject.SetActive(false);
+            Animator animator = mineSprite.gameObject.GetComponent<Animator>();
+            animator.SetTrigger("Explode");
         }
     }
 
