@@ -6,16 +6,13 @@ using UnityEngine;
 public class FoodLogic : MonoBehaviour
 {
     public Sprite[] spriteVariants;
-    SpriteRenderer spriteRenderer => GetComponent<SpriteRenderer>();
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Awake()
     {
-        if(spriteRenderer != null)
-        {
-            int randomSpriteIndex = Random.Range(0,spriteVariants.Length);
-            spriteRenderer.sprite = spriteVariants[randomSpriteIndex];
-        }
+        int randomSpriteIndex = Random.Range(0,spriteVariants.Length);
+        spriteRenderer.sprite = spriteVariants[randomSpriteIndex];
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
