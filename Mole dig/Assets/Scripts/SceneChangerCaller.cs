@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class SceneChangerCaller : MonoBehaviour
 {
-    public string sceneName;
-
-    public void Call()
+    public void Call(string sceneName)
     {
+        print("Call");
         SceneChanger.Instance().ChangeScene(sceneName);
     }
 }

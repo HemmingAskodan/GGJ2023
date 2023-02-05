@@ -2963,16 +2963,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1501548768}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1501548773}
+        m_TargetAssemblyTypeName: SceneChangerCaller, Assembly-CSharp
+        m_MethodName: Call
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Intro scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1501548771
@@ -3025,7 +3025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e1d803d2b18a847bcf48c60a3d2e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Intro Scene
 --- !u!1 &1538725857
 GameObject:
   m_ObjectHideFlags: 0
@@ -3821,7 +3820,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936992845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
