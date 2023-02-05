@@ -784,6 +784,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4151453126479855955, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5269363826644200214, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
       propertyPath: m_audioClip
       value: 
