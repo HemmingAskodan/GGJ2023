@@ -7,10 +7,9 @@ public enum DeathCodes{
     StaminaDrain
 }
 
-[RequireComponent(typeof(Animator))]
 public class DeathCodeController : MonoBehaviour
 {
-    Animator animator => GetComponent<Animator>();
+    public Animator moleSpriteAnimator;
 
     public void killMole(DeathCodes deathCode){
         if(deathCode == DeathCodes.Explode)

@@ -19,7 +19,7 @@ public class RandomSpawner : MonoBehaviour
     public SpawnObject[] spawnObjects;
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         foreach (SpawnObject spawnObject in spawnObjects)
         {

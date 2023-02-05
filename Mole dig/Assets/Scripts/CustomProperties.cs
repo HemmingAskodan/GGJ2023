@@ -16,7 +16,6 @@ public class CustomProperties : MonoBehaviour
         }
         else
         {
-            DontDestroyOnLoad(this.gameObject);
             Instance = this;
         }
     }
