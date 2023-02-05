@@ -11,15 +11,27 @@ public class DeathCodeController : MonoBehaviour
 {
     public Animator moleSpriteAnimator;
 
+    IEnumerator DelayShowGameOver()
+    {
+        yield return new WaitForSeconds(3);
+        GameOverScreen.Instance.Show(true);
+    }
     public void killMole(DeathCodes deathCode){
+        bool isDead = false;
         if(deathCode == DeathCodes.Explode)
         {
             // Play death on explosion
             gameObject.SetActive(false);
+            isDead = true;
         }
         if(deathCode == DeathCodes.StaminaDrain)
         {
-
+            isDead = true;
+        }
+        if(isDead)
+        {
+            // StartCoroutine(DelayShowGameOver());
+            GameOverScreen.Instance.Show(true);
         }
     }
 }

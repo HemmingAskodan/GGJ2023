@@ -452,7 +452,7 @@ MonoBehaviour:
   beepSound: {fileID: 5269363826644200214}
   closestAway: 1
   furthestAway: 3.5
-  fastestInterval: 0.25
+  fastestInterval: 0.15
   distCurve:
     serializedVersion: 2
     m_Curve:
