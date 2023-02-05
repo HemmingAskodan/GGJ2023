@@ -706,7 +706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30.099976, y: -20}
+  m_AnchoredPosition: {x: 30.100098, y: -20}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &312259753
@@ -1434,7 +1434,7 @@ AudioSource:
   m_GameObject: {fileID: 762954816}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3474372825476096268, guid: 8b09897664cf14344974cce5b35f4558, type: 2}
   m_audioClip: {fileID: 8300000, guid: 42c815961830ed14c9630a24e9136310, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.25
@@ -1533,7 +1533,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 939f3ccb2d611c146b173ae439604666, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.237
   m_Pitch: 1
   Loop: 0
   Mute: 0
