@@ -403,7 +403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30.099976, y: -20}
+  m_AnchoredPosition: {x: 30.100098, y: -20}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &545133106
@@ -776,10 +776,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1511040934001520655, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
+      propertyPath: fastestInterval
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3041299396151204957, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5269363826644200214, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c11e6b7f1fba32b48b268412d65d0570, type: 3}
     - target: {fileID: 6065720432427704405, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
       propertyPath: m_Name
       value: Mine 1
@@ -808,7 +816,8 @@ PrefabInstance:
       propertyPath: CollisionTag
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6745264588734770557, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
 --- !u!1 &1194445520
 GameObject:
@@ -1387,49 +1396,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2121772981 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6065720432427704405, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
-  m_PrefabInstance: {fileID: 1149691272}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2121772987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6745264588734770557, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
-  m_PrefabInstance: {fileID: 1149691272}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121772981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2121772988 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4151453126479855955, guid: 3f72ccd2d7222c54da40041af2a078b3, type: 3}
-  m_PrefabInstance: {fileID: 1149691272}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121772981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2121772989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121772981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Emitters:
-  - Target: {fileID: 2121772987}
-    Params: []
-  - Target: {fileID: 2121772988}
-    Params: []
-  TriggerEvent: 1
