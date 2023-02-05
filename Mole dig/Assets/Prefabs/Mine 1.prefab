@@ -96,6 +96,10 @@ PrefabInstance:
       value: Mine 1
       objectReference: {fileID: 0}
     - target: {fileID: 5684613644643318195, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684613644643318195, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1717168192298072271}

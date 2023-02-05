@@ -7,7 +7,16 @@ public class MineTriggered : MonoBehaviour
 {
     public SpriteRenderer mineSprite;
     public AnimationCurve distanceCurve;
-    private Transform playerTransform => GameObject.FindGameObjectWithTag("Player").transform;
+    private Transform playerTransform;
+
+    void Awake() {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        if(player != null)
+        {
+            playerTransform = player.transform;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))

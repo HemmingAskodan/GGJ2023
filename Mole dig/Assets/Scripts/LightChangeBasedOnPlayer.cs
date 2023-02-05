@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class LightChangeBasedOnPlayer : MonoBehaviour
 {
-    private Transform playerTransform => GameObject.FindGameObjectWithTag("Player").transform;
+    private Transform playerTransform;
     public SpriteRenderer spriteRenderer;
     public AnimationCurve distanceCurve = AnimationCurve.Linear(0,0,1,1);
-
+    void Awake() {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        if(player != null)
+        {
+            playerTransform = player.transform;
+        }
+    }
     void LateUpdate()
     {
         float playerDept = playerTransform.position.y;
