@@ -9,10 +9,11 @@ public class MineTriggered : MonoBehaviour
     public AnimationCurve distanceCurve;
     private Transform playerTransform;
 
-    void Awake() {
+    void Awake()
+    {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
-        if(player != null)
+
+        if (player != null)
         {
             playerTransform = player.transform;
         }
@@ -39,8 +40,14 @@ public class MineTriggered : MonoBehaviour
         float playerDept = playerTransform.position.y;
         float distanceVary = CustomProperties.Instance.deptUntilFullyDark + playerDept;
 
-        float dist01 = distanceCurve.Evaluate(Vector3.Distance(transform.position, playerTransform.position) / Mathf.Max(0,distanceVary));
+        float dist01 = distanceCurve.Evaluate(Vector3.Distance(transform.position, playerTransform.position) / Mathf.Max(0, distanceVary));
         Color currColor = mineSprite.color;
         mineSprite.color = new Color(currColor.r, currColor.g, currColor.b, 1 - dist01);
+    }
+
+    private void OnDisable()
+    {
+        Color currColor = mineSprite.color;
+        mineSprite.color = new Color(currColor.r, currColor.g, currColor.b, 1);
     }
 }

@@ -6,7 +6,6 @@ public class SceneChangerCaller : MonoBehaviour
 {
     public void Call(string sceneName)
     {
-        print("Call");
         SceneChanger.Instance().ChangeScene(sceneName);
     }
 }

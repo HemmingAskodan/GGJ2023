@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1855777150647207503}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2788195, y: 0.2788195, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969034926724849178}
@@ -136,6 +136,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4528574680074524088}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5708337588275749379}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -578,11 +590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7252139986601383828, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.27881947
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7252139986601383828, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.27881947
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7252139986601383828, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: m_LocalScale.z
@@ -590,11 +602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7252139986601383828, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.46
+      value: 3.185398
       objectReference: {fileID: 0}
     - target: {fileID: 7252139986601383828, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.4590931
+      value: 4.021372
       objectReference: {fileID: 0}
     - target: {fileID: 7252139986601383828, guid: 4732c91234812274fad5904e0cd5692b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -655,7 +667,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 0.3903473
 --- !u!95 &489560346273903284
 Animator:
   serializedVersion: 5

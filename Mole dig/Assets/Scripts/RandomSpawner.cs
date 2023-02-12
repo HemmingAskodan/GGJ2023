@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct SpawnObject
+public class SpawnObject
 {
     public GameObject prefab;
     public int amount;
+    public float freeSpaceAroundRadiusMultiplier = 1;
 }
 
 
@@ -17,8 +18,7 @@ public class RandomSpawner : MonoBehaviour
     public Vector2 areaBottomRight;
     public SpawnObject[] spawnObjects;
 
-    // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         foreach (SpawnObject spawnObject in spawnObjects)
         {
@@ -26,7 +26,7 @@ public class RandomSpawner : MonoBehaviour
             string colliderType = collider2D.GetType().ToString();
             for (int i = 0; i < spawnObject.amount; i++)
             {
-                for(int j = 0; j < 10; j++)
+                for (int j = 0; j < 10; j++)
                 {
                     Vector2 randomPosition = new Vector2(
                         Random.Range(areaTopLeft.x, areaBottomRight.x),
@@ -34,22 +34,22 @@ public class RandomSpawner : MonoBehaviour
                     );
 
                     bool spawn = false;
-                    switch(colliderType)
+                    switch (colliderType)
                     {
                         case "UnityEngine.CircleCollider2D":
                             CircleCollider2D realCollider2D = spawnObject.prefab.GetComponent<CircleCollider2D>();
-                            if(!Physics2D.OverlapCircle(randomPosition,realCollider2D.radius))
+                            if (!Physics2D.OverlapCircle(randomPosition, realCollider2D.radius * spawnObject.freeSpaceAroundRadiusMultiplier))
                             {
                                 spawn = true;
                                 break;
                             }
-                        break;
+                            break;
                         default:
                             spawn = true;
-                        break;
+                            break;
                     }
 
-                    if(spawn == true)
+                    if (spawn == true)
                     {
                         Instantiate(spawnObject.prefab,
                             randomPosition,

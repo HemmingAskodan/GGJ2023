@@ -7,16 +7,19 @@ using UnityEngine.UI;
 public class SceneChanger : MonoBehaviour
 {
     private static SceneChanger instance;
-    public static SceneChanger Instance(){
+    public static SceneChanger Instance()
+    {
         return instance;
     }
     public Image fadeImage;
-    public float fadeTime = 1f;
+    public float fadeTime = .2f;
 
     // Start is called before the first frame update
     void Awake()
     {
-        if(instance == null)
+        // Color c = fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1);
+
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -27,30 +30,42 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
-    private void Update() {
+    private void Update()
+    {
         Color fc = fadeImage.color;
-        fc = new Color(fc.r,fc.g,fc.b,fc.a + ((fadeOut?1:-1)*Time.deltaTime/fadeTime));
+        fadeImage.color = new Color(fc.r, fc.g, fc.b, fc.a + ((fadeOut ? 1 : -1) * Time.deltaTime / fadeTime));
     }
 
     private string sceneName;
     private bool fadeOut = false;
 
-    IEnumerator DelayLoad()
+    IEnumerator LoadYourAsyncScene()
     {
-        yield return new WaitForSeconds(fadeTime);
-        SceneManager.LoadScene(sceneName);
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        fadeOut = true;
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        fadeOut = false;
     }
+    // IEnumerator DelayLoad()
+    // {
+    //     yield return new WaitForSeconds(fadeTime);
+    //     SceneManager.LoadScene(sceneName);
+    // }
     public void ChangeScene(string sceneName)
     {
         this.sceneName = sceneName;
         fadeOut = true;
-        StartCoroutine(DelayLoad());
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
-        fadeOut = false;
+        StartCoroutine(LoadYourAsyncScene());
     }
 }
