@@ -36,6 +36,10 @@ public class DeathCodeController : MonoBehaviour
         {
             // StartCoroutine(DelayShowGameOver());
             GameOverScreen.Instance.Show(true);
+            foreach (MineTriggered mineTriggered in Resources.FindObjectsOfTypeAll(typeof(MineTriggered)))
+            {
+                mineTriggered.ShowMine();
+            }
         }
     }
 }

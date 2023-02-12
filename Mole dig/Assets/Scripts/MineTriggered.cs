@@ -8,6 +8,7 @@ public class MineTriggered : MonoBehaviour
     public SpriteRenderer mineSprite;
     public AnimationCurve distanceCurve;
     private Transform playerTransform;
+    private bool mineShown = false;
 
     void Awake()
     {
@@ -37,17 +38,28 @@ public class MineTriggered : MonoBehaviour
 
     private void LateUpdate()
     {
-        float playerDept = playerTransform.position.y;
-        float distanceVary = CustomProperties.Instance.deptUntilFullyDark + playerDept;
+        if (!mineShown)
+        {
+            float playerDept = playerTransform.position.y;
+            float distanceVary = CustomProperties.Instance.deptUntilFullyDark + playerDept;
 
-        float dist01 = distanceCurve.Evaluate(Vector3.Distance(transform.position, playerTransform.position) / Mathf.Max(0, distanceVary));
-        Color currColor = mineSprite.color;
-        mineSprite.color = new Color(currColor.r, currColor.g, currColor.b, 1 - dist01);
+            float dist01 = distanceCurve.Evaluate(Vector3.Distance(transform.position, playerTransform.position) / Mathf.Max(0, distanceVary));
+            Color currColor = mineSprite.color;
+            mineSprite.color = new Color(currColor.r, currColor.g, currColor.b, 1 - dist01);
+        }
     }
 
     private void OnDisable()
     {
         Color currColor = mineSprite.color;
         mineSprite.color = new Color(currColor.r, currColor.g, currColor.b, 1);
+    }
+
+    public void ShowMine()
+    {
+        mineShown = true;
+        Color currColor = mineSprite.color;
+        mineSprite.color = new Color(currColor.r, currColor.g, currColor.b, 1);
+        // GetComponentInChildren<BeepSoundIntervalByPlayer>().enabled = false;
     }
 }

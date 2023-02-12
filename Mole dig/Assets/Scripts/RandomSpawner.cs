@@ -8,6 +8,7 @@ public class SpawnObject
     public GameObject prefab;
     public int amount;
     public float freeSpaceAroundRadiusMultiplier = 1;
+    public bool randomRotation = true;
 }
 
 
@@ -53,7 +54,7 @@ public class RandomSpawner : MonoBehaviour
                     {
                         Instantiate(spawnObject.prefab,
                             randomPosition,
-                            Quaternion.Euler(0, 0, Random.Range(0, 360f))
+                            Quaternion.Euler(0, 0, spawnObject.randomRotation ? Random.Range(0, 360f) : 0)
                         );
                         break;
                     }

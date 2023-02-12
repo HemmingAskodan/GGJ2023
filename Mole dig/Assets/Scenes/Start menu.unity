@@ -1005,7 +1005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: 86.280014}
+  m_AnchoredPosition: {x: 25, y: 86.28003}
   m_SizeDelta: {x: 120, y: 90}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &348891118
@@ -1346,7 +1346,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.15
   m_Text: "Programmer\nHemming Petersen\n\nVisual Design\nHelena Leo\n\nSound Design\nEirikur
-    Biskopst\xF8\xF0\nBj\xF8rn Askham Bjarnason"
+    Biskopst\xF8\nBj\xF8rn Askham Bjarnason"
 --- !u!222 &441622556
 CanvasRenderer:
   m_ObjectHideFlags: 0
